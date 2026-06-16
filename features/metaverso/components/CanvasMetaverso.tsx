@@ -78,7 +78,7 @@ export default function CanvasMetaverso() {
   return (
     <Canvas
       camera={{ position: [0, 3, 12], fov: 60 }}
-      shadows
+      shadows={{ type: THREE.PCFShadowMap }}
       onPointerMissed={() => setActiveStand(null)}
     >
       <ambientLight intensity={0.7} />
