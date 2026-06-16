@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
 
 import { useMetaversoStore } from '../hooks/useMetaversoStore';
 import StandModal from './StandModal';
@@ -17,19 +16,6 @@ const CanvasMetaverso = dynamic(() => import('./CanvasMetaverso'), {
 
 export default function FeriaEscena() {
   const activeStand = useMetaversoStore((state) => state.activeStand);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-slate-950 text-white">
-        Cargando Entorno Virtual 3D...
-      </div>
-    );
-  }
 
   return (
     <div className="relative h-screen w-full bg-black">

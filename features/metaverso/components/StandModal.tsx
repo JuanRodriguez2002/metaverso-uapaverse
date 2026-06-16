@@ -76,6 +76,7 @@ export default function StandModal() {
                 <div className="grid grid-cols-3 gap-2">
                   {activeStand.images.length > 0
                     ? activeStand.images.map((imageUrl, index) => (
+                        // eslint-disable-next-line @next/next/no-img-element -- Gallery images can come from arbitrary project URLs.
                         <img
                           key={`${imageUrl}-${index}`}
                           src={imageUrl}
